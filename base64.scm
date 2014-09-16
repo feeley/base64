@@ -10,6 +10,19 @@
 
 ;;;============================================================================
 
+(define-library (https://github.com/feeley/base64)
+
+  (export base64-substring->u8vector
+          base64-string->u8vector
+          subu8vector->base64-string
+          u8vector->base64-string)
+
+  (import (gambit))
+
+  (begin
+
+;;;============================================================================
+
 (declare
   (standard-bindings)
   (extended-bindings)
@@ -285,5 +298,7 @@
 
 (define (u8vector->base64-string u8vect #!optional (width 0))
   (subu8vector->base64-string u8vect 0 (u8vector-length u8vect) width))
+
+))
 
 ;;;============================================================================
